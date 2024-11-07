@@ -24,7 +24,8 @@ class EventHubReader {
         processEvents: (events, context) => {
           for (let i = 0; i < events.length; ++i) {
             startReadMessageCallback(
-              events[i].body,
+              //events[i].body,
+              events[i].body.datetime,
               events[i].enqueuedTimeUtc,
               events[i].systemProperties["iothub-connection-device-id"]);
           }
